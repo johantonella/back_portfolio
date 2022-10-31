@@ -24,6 +24,7 @@ public class Hys {
         this.porcentaje = porcentaje;
     }
 
+
     public int getId() {
         return id;
     }
@@ -47,5 +48,5 @@ public class Hys {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
+
 }

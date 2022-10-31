@@ -64,7 +64,7 @@ public class CHys {
             return new ResponseEntity(new Mensaje("Esa skill existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Hys hys = new Hys(dtohys.getNombre(), dtohys.getPorcentaje());
+        Hys hys = new Hys(dtohys.getNombre(), dtohys.getPorcentaje() );
         shys.save(hys);
         
         return new ResponseEntity(new Mensaje("Skill agregada"),HttpStatus.OK);
