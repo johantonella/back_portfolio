@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "http://localhost:4200")
-//@CrossOrigin(origins = {"https://front-porfolio-1bd40.web.app", "http://localhost:4200"})
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://front-porfolio-1bd40.web.app/")
 public class PersonaController {
     
     @Autowired
@@ -70,7 +70,7 @@ public class PersonaController {
         return new ResponseEntity(new Mensaje("Persona creada"), HttpStatus.OK);
     }
     */
-    
+  
     
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtopersona){
