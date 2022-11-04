@@ -1,13 +1,13 @@
 
 package com.portfolio.back;
 
-import java.util.Arrays;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 
 
@@ -15,13 +15,27 @@ import org.springframework.web.filter.CorsFilter;
 public class BackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackApplication.class, args);
-                
-               
+		SpringApplication.run(BackApplication.class, args);      
 	}
 
-	@Bean
         
+	@Bean
+        public WebMvcConfigurer corsConfigurer(){
+        return new WebMvcConfigurer(){
+            @Override
+            public void addCorsMappings(CorsRegistry registry){
+                registry.addMapping("/*")
+                        .allowedOrigins("")
+                        .allowedMethods("")
+                        .allowedHeaders("");    
+            }
+        };
+    }
+}
+    
+   
+        
+        /*
         public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
@@ -43,6 +57,6 @@ public class BackApplication {
     private void header(String accessControlAllowHeaders_Origin_XRequest) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+*/
         
         
-}
