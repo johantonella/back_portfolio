@@ -16,6 +16,8 @@ public class BackApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackApplication.class, args);
+                
+               
 	}
 
 	@Bean
@@ -33,7 +35,13 @@ public class BackApplication {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        
         return new CorsFilter(urlBasedCorsConfigurationSource);
+    }
+
+    private void header(String accessControlAllowHeaders_Origin_XRequest) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
         
